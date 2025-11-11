@@ -1,0 +1,5 @@
+# Contenido de requirements.txt
+fastapi
+uvicorn
+pyodbc
+pydantic

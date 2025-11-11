@@ -1,0 +1,18 @@
+# Contenido de .gitignore
+# Entorno virtual
+venv/
+.venv/
+env/
+
+# Archivos de caché
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Archivos de la base de datos (¡CRUCIAL!)
+# No subir credenciales sensibles
+*.env 
+config.ini 
+secrets.py
+# (Si estás usando variables de entorno de Azure, asegúrate de que no
+# estén codificadas en main.py, sino cargadas desde el entorno, como lo planeamos.)
