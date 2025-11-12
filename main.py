@@ -99,7 +99,7 @@ async def validate_qr(data: QRCodeData):
             return {
                 "status": "warning",
                 "message": f"❌ Error: El código '{qr_id}' ({nombre_invitado}) YA FUE LEÍDO.",
-                "details": {"id": qr_id, "nombre": nombre_invitado, "read": True}
+                "details": {"id": qr_id, "Nombre": nombre_invitado, "read": True}
             }
         else:
             # 2. Marcar como leído
