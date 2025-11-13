@@ -114,7 +114,7 @@ async def validate_qr(data: QRCodeData):
             # 3. Respuesta de éxito
             return {
                 "status": "success",
-                "message": f"✅ Éxito: Colaborador '{qr_id}' ({nombre_invitado}) REGISTRADO COn EXITO.",
+                "message": f"✅ Éxito: Colaborador '{qr_id}' ({nombre_invitado}) REGISTRADO.",
                 "details": {"id": qr_id, "nombre": nombre_invitado, "read": True, "date": now}
             }
 
