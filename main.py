@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pymysql
 from datetime import datetime
-import os
 import ssl  # Necesario para manejar la ruta del certificado SSL
 
 # --- Configuración de Conexión a Azure MySQL Database ---
@@ -98,7 +97,7 @@ async def validate_qr(data: QRCodeData):
             # El código ya fue leído
             return {
                 "status": "warning",
-                "message": f"❌ Error: El código '{qr_id}' ({nombre_invitado}) YA FUE LEÍDO.",
+                "message": f"❌ Error: El colaborador '{qr_id}' ({nombre_invitado}) YA ESTA REGISTRADO.",
                 "details": {"id": qr_id, "Nombre": nombre_invitado, "read": True}
             }
         else:
@@ -115,7 +114,7 @@ async def validate_qr(data: QRCodeData):
             # 3. Respuesta de éxito
             return {
                 "status": "success",
-                "message": f"✅ Éxito: Código '{qr_id}' ({nombre_invitado}) MARCADO COMO LEÍDO.",
+                "message": f"✅ Éxito: Colaborador '{qr_id}' ({nombre_invitado}) REGISTRADO COn EXITO.",
                 "details": {"id": qr_id, "nombre": nombre_invitado, "read": True, "date": now}
             }
 
