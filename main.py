@@ -123,7 +123,7 @@ async def validate_qr(data: QRCodeData):
         raise
     except Exception as e:
         conn.rollback()
-        print(f"Error en la lógica del endpoint: {str(e)}")
+        print(f"Error en la lógica del servicio: {str(e)}")
         raise HTTPException(
             status_code=500, detail=f"Error interno del servidor en la transacción: {str(e)}")
     finally:
